@@ -3,11 +3,11 @@
 import os
 import sys
 import logging
-import ConfigParser
+import configparser 
 
 CONFIG_FILE = '/usr/local/lib/mysql_file_copy/configs/app.conf'
 
-config = ConfigParser.ConfigParser()
+config = configparser.ConfigParser()
 config.read(CONFIG_FILE)
 
 source_folder = config.get("file_path","source_folder")
