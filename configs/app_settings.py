@@ -5,7 +5,7 @@ import sys
 import logging
 import ConfigParser
 
-CONFIG_FILE = '/usr/local/lib/mysql_copy/configs/app.conf'
+CONFIG_FILE = '/usr/local/lib/mysql_file_copy/configs/app.conf'
 
 config = ConfigParser.ConfigParser()
 config.read(CONFIG_FILE)
