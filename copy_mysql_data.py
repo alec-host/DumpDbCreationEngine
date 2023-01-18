@@ -12,7 +12,7 @@ class CopyMySqlData():
         os.system('sudo ' + self.db_service_path + ' stop')
     #--.start mysql service.            
     def db_start_command(self):
-        os.system('sudo '+ self.db_service_path +' start')
+        os.system('sudo ' + self.db_service_path +' start')
     #--.copy file.
     def copy_file(self):
         os.system('sudo cp -p ' + self.db_source_path + ' * ' + self.db_destination_path)
