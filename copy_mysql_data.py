@@ -24,5 +24,9 @@ class CopyMySqlData():
     def delete_command(self):
         os.system('sudo rm ' + self.db_source_path + '*')
     #--.unzip a file to define src folder.
-    def unzip_command(self):
-        os.system('sudo unzip ' + self.compressed_file_source_folder + ' -d ' +  self.db_source_path);
+    def unzip_command(self,file_name):
+        os.system('sudo unzip ' + self.compressed_file_source_folder + '/' + file_name + ' -d ' +  self.db_source_path)
+    #--.get latest file.
+    def get_latest_file(self):
+        file_name = os.system('ls ' + self.compressed_file_source_folder + ' -tp | grep -v /$ | head -1')
+        return file_name
