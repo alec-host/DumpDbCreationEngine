@@ -22,3 +22,6 @@ class CopyMySqlData():
     #--.delete data folder.
     def delete_command(self):
         os.system('sudo rm ' + self.db_source_path + '*')
+    #--.unzip a file.
+    def unzip_command(self):
+        pass
