@@ -20,6 +20,8 @@ try:
         logging.debug("METADATA AFTER COPY: {} (${})".format(__file__,_copy_mysql_data.get_file_metadata(CONFIGS.destination_folder)))
         #_copy_mysql_data.db_stop_command();
         _copy_mysql_data.delete_command()
+    else:
+        logging.debug("ERROR: {} (${})".format(__file__,"NO FILE FOUND"))
 except PermissionError:
     logging.debug("ERROR: {} (${})".format(__file__,"PERMISSION DENIED"))
 except:
