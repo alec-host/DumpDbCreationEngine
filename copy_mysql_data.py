@@ -34,7 +34,7 @@ class CopyMySqlData():
         return str(process.communicate()[0].decode()).strip()
     #--.import data.
     def import_data(self,user,password,file_name="file_name.sql"):
-        command = ('mysql -u ' + user + ' -p db_demo < ' + self.db_source_path + 'db-dumps/' + file_name)
+        command = ('mysql -u ' + user + ' -p ' + password + 'db_demo < ' + self.db_source_path + 'db-dumps/' + file_name)
         process = Popen(args=command,stdout=PIPE,shell=True)
         return str(process.communicate()[0].decode()).strip()
 
