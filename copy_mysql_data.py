@@ -26,7 +26,7 @@ class CopyMySqlData():
         os.system('sudo rm -r ' + self.db_source_path + '/')
     #--.unzip a file to define src folder.
     def unzip_command(self,file_name):
-        os.system('sudo unzip ' + self.compressed_file_source_folder + '/' + file_name + ' -d ' +  self.db_source_path)
+        os.system('sudo unzip ' + self.compressed_file_source_folder + '' + file_name + ' -d ' +  self.db_source_path)
     #--.get latest file.
     def get_latest_file(self):
         command = ('ls ' + self.compressed_file_source_folder + ' -tp | grep -v /$ | head -1')
