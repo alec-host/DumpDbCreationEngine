@@ -32,3 +32,19 @@ class CopyMySqlData():
         command = ('ls ' + self.compressed_file_source_folder + ' -tp | grep -v /$ | head -1')
         process = Popen(args=command,stdout=PIPE,shell=True)
         return str(process.communicate()[0].decode()).strip()
+    #--.import data.
+    def import_data(self,user,password):
+        command = ('mysql -u ' + user + ' -p db_demo < ' + self.db_source_path + 'db-dumps/')
+        process = Popen(args=command,stdout=PIPE,shell=True)
+        return str(process.communicate()[0].decode()).strip()
+
+
+
+
+
+
+
+
+
+
+    
