@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 
 import os
+from subprocess import PIPE, Popen
 
 class CopyMySqlData():
     def __init__(self,db_service_path,db_source_path,db_destination_path,compressed_file_source_folder):
@@ -28,5 +29,6 @@ class CopyMySqlData():
         os.system('sudo unzip ' + self.compressed_file_source_folder + '/' + file_name + ' -d ' +  self.db_source_path)
     #--.get latest file.
     def get_latest_file(self):
-        file_name = os.system('ls ' + self.compressed_file_source_folder + ' -tp | grep -v /$ | head -1')
-        return file_name
+        command = ('ls ' + self.compressed_file_source_folder + ' -tp | grep -v /$ | head -1')
+        process = Popen(args=command,stdout=PIPE,shell=True)
+        return str(process.communicate()[0].decode()).strip()
