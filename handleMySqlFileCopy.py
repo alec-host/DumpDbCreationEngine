@@ -18,7 +18,8 @@ try:
         _copy_mysql_data.copy_file()
         _copy_mysql_data.get_file_metadata(CONFIGS.destination_folder)
         logging.debug("METADATA AFTER COPY: {} (${})".format(__file__,_copy_mysql_data.get_file_metadata(CONFIGS.destination_folder)))
-        #_copy_mysql_data.db_stop_command();
+        #_copy_mysql_data.db_start_command();
+        _copy_mysql_data.import_data(CONFIGS.user,CONFIGS.password)
         _copy_mysql_data.delete_command()
     else:
         logging.debug("ERROR: {} (${})".format(__file__,"NO FILE FOUND"))
